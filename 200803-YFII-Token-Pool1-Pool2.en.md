@@ -106,7 +106,7 @@ Besides, we discussed code details with community developers Madao and gaojin. A
 
 In particular, the time difference between the two cycles will be taken into account when the smart contract is calculating the reward. It will result in the reward value calculated for each user being slightly higher than the expected value, and a specific error occurs. As a result, we find that as long as the error exists, the last person to withdraw the reward from the pool may theoretically not be able to withdraw it properly. The contract is halved at the same time as minting YFII token to the pool contract. Due to the existence of the previous error, the book income of the user is higher than the token amount mints out. The magnitude of the error is calculated by multiplying the time difference `Delta` by the reward rate after the halving.  The `Delta` is the time difference between the end of each cycle and when the next halving occurs.
 
-![[YFII-Error.png]]
+![](https://i.imgur.com/JGULj1o.png)
 
 According to the above graph, we take the average delay time for halving as 60 seconds, and the cumulative error is within 1 YFII. As long as the time error is small enough, plus the next cycle's continuous token as a supplement, the error problem has little effect.
 
