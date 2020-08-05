@@ -1,6 +1,7 @@
 # Security Review on YFII Liquidity Mining Smart Contracts
 
 > https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md
+> 
 > **Available in [ [English](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.en.md) | [中文](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md) ]**
 
 [YFII](https://yfii.finance/) is a newly-initiated DeFi mining pool. At the invitation of community, [SECBIT Labs](https://secbit.io) conducted a security study of YFII smart contracts from July 27 to August 2, 2020.
@@ -111,7 +112,7 @@ According to the above graph, we take the average delay time for halving as 60 s
 
 [@ThinkingETH](https://twitter.com/ThinkingETH/status/1290633339158687746) reminded that `withdraw()` should not have the `checkhalve()` modifier. If the contract is accidentally removed as a minter, all user funds may be frozen after the halving since the contract function will fail. 
 
-Luckily, YFII has set the token's owner to zero address (see the next section for details). The Pool1 and Pool2 should always be the minter of the YFII token. So this risk does not currently exist for YFII.  However, as smart contract code, this should be implemented more rigorously and robustly, otherwise many users' money could be at high risk. In particular, many projects that go further with forking YFII code can be tragic if developers don't understand the details. [@DoveyWan] (https://twitter.com/DoveyWan/status/1290541716290670592) and [@oli_vdb] (https://twitter.com/oli_vdb/status/) 1290370855709573122) also mentions a similar security incident.
+Luckily, YFII has set the token's owner to zero address (see the next section for details). The Pool1 and Pool2 should always be the minter of the YFII token. So this risk does not currently exist for YFII.  However, as smart contract code, this should be implemented more rigorously and robustly, otherwise many users' money could be at high risk. In particular, many projects that go further with forking YFII code can be tragic if developers don't understand the details. [@DoveyWan](https://twitter.com/DoveyWan/status/1290541716290670592) and [@oli_vdb](https://twitter.com/oli_vdb/status/1290370855709573122) also mentions a similar security incident.
 
 ## YFII Administrator Rights Processing
 

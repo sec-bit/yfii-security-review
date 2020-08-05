@@ -1,9 +1,10 @@
 # YFII 流动性挖矿合约安全性研究
 
 > https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md
+> 
 > **Available in [ [English](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.en.md) | [中文](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md) ]**
 
-YFII 是一个新型去中心化 DeFi 矿池，应社区小伙伴邀请，安比实验室于 2020 年 7 月 27 日至 8 月 2 日对 YFII 智能合约进行了安全性研究。
+[YFII](https://yfii.finance/) 是一个新型去中心化 DeFi 矿池，应社区小伙伴邀请，[安比实验室](https://secbit.io)于 2020 年 7 月 27 日至 8 月 2 日对 YFII 智能合约进行了安全性研究。
 
 分析对象为下列合约：
 
@@ -108,6 +109,10 @@ YFII 和 YFI 流动性挖矿的核心合约代码 YearnRewards 实际源自于 S
 ![](https://i.imgur.com/JGULj1o.png)
 
 根据上图测算，平均延时 60 秒减半，累计误差在 1 个 YFII 以内。只要能控制时间误差足够小，再加上持续有下一周期的 Token 作为补充，因此该误差问题影响较小。
+
+另外，[@ThinkingETH](https://twitter.com/ThinkingETH/status/1290633339158687746) 提醒 `withdraw()` 函数不应该加上 `checkhalve()` 修饰器。如果 Pool 合约地址被故意或意外移除了 YFII token 的 minter 权限，那么用户将无法正常调用 `withdraw()` 函数因为 `mint()` 执行有可能会失败。
+
+由于 YFII 已经将 token 的 owner 设为 0 地址（详见下一节），Pool1 和 Pool2 应该永远是 YFII token 的 minter，所以这个风险对于 YFII token 目前不存在。但作为智能合约代码来讲，这里的确应该实现得更严谨和更健壮，否则许多用户的资金可能处在高度风险中。尤其是很多进一步 fork YFII 代码的项目，如果开发者不了解这里面的细节，则很可能酿成悲剧。[@DoveyWan](https://twitter.com/DoveyWan/status/1290541716290670592) 和 [@oli_vdb](https://twitter.com/oli_vdb/status/1290370855709573122)  也提到了类似的安全事件。
 
 ## YFII 管理员权限处理
 
