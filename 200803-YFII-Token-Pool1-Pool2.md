@@ -1,5 +1,8 @@
 # YFII 流动性挖矿合约安全性研究
 
+> https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md
+> **Available in [ [English](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.en.md) | [中文](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md) ]**
+
 YFII 是一个新型去中心化 DeFi 矿池，应社区小伙伴邀请，安比实验室于 2020 年 7 月 27 日至 8 月 2 日对 YFII 智能合约进行了安全性研究。
 
 分析对象为下列合约：

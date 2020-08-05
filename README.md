@@ -2,8 +2,9 @@
 
 ## Security Review for YFII Token, Pool1, and Pool2
 
-[200803-YFII-Token-Pool1-Pool2.md](200803-YFII-Token-Pool1-Pool2.md)
+> **200803-YFII-Token-Pool1-Pool2, Available in [ [English](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.en.md) | [中文](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md) ]**
 
+The analysis was performed on the following contracts.
 
 - YFII Pool 1: 0xb81D3cB2708530ea990a287142b82D058725C092
 - YFII Pool 2: 0xAFfcD3D45cEF58B1DfA773463824c6F6bB0Dc13a
