@@ -1,8 +1,11 @@
 # Security Review on YFII Liquidity Mining Smart Contracts
 
+*Thanks to community volunteers Alex Vane and Terence C. for the translation!*
+
 > https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md
 > 
 > **Available in [ [English](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.en.md) | [中文](https://github.com/sec-bit/yfii-security-review/blob/master/200803-YFII-Token-Pool1-Pool2.md) ]**
+
 
 [YFII](https://yfii.finance/) is a newly-initiated DeFi mining pool. At the invitation of community, [SECBIT Labs](https://secbit.io) conducted a security study of YFII smart contracts from July 27 to August 2, 2020.
 
